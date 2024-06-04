@@ -3,14 +3,16 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "cpp-dev",
     "workspaceFolder": "/workspace",
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
-    "extensions": [
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools",
-        "ms-vscode.cmake"
-    ],
-    "remoteUser": "vscode",
+"customizations": {
+	"vscode/settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"vscode/extensions": [
+		"ms-vscode.cpptools",
+		"ms-vscode.cmake-tools",
+		"ms-vscode.cmake"
+	]
+},
+"remoteUser": "vscode",
     "postCreateCommand": "sudo apt-get update && sudo apt-get install -y cmake gdb build-essential"
 }
