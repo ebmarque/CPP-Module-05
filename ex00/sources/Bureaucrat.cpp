@@ -5,16 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 08:32:40 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/05 08:45:00 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/06/05 13:54:08 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/06/05 13:57:10 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+void	log(const char *color, std::string text)
+{
+	std::cout << color << text << RESET << std::endl;
+}
+
 Bureaucrat::Bureaucrat() 
 {
-	// Default constructor implementation
+	log(GREEN, "Bureaucrat default constructor called.");
+	this->grade = 0;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) 
@@ -35,3 +41,4 @@ Bureaucrat::~Bureaucrat()
 {
 	// Destructor implementation
 }
+
