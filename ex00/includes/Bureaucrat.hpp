@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:08:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 13:03:42 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:31:00 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 		public:
-			virtual const char *what() const throw() {return "Grade above 150";}
+			virtual const char *what() const throw() {return "Grade too high execption: grade < 1";}
 		};
 		class GradeTooLowException : public std::exception
 		{
 		public:
-			virtual const char *what() const throw() {return "Grade bellow 1";}
+			virtual const char *what() const throw() {return "Grade too low execption: grade > 150";}
 		};
 };
 

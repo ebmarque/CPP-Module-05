@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:54:08 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 15:13:57 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:33:20 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name)
 {
 	log(GREEN, "Bureaucrat constructor called.");
 	this->grade = _grade;
-	if (grade > 150)
+	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	if (grade < 1)
+	if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	std::cout << GREEN << this->getName() + " CREATED." << RESET << std::endl;
 }
@@ -60,17 +60,17 @@ int Bureaucrat::getGrade(void) const
 void Bureaucrat::increment(void) 
 {
 	this->grade += 1;
+	if (this->grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 	if (this->grade > 150)
-        throw Bureaucrat::GradeTooHighException();
-    if (this->grade < 1)
-        throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void Bureaucrat::decrement(void) 
 {
 	this->grade -= 1;
-	if (grade > 150)
-        throw Bureaucrat::GradeTooHighException();
-    if (grade < 1)
-        throw Bureaucrat::GradeTooLowException();
+	if (this->grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (this->grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 12:08:35 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 16:09:21 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:35:49 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
+		std::cout << RED << "[KO] " << RESET;
+		std::cout << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException &e)
+	{
 		std::cout << GREEN << "[OK] " << RESET;
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
@@ -47,10 +52,14 @@ int main(void)
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
+		std::cout << RED << "[KO] " << RESET;
+		std::cout << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooHighException &e)
+	{
 		std::cout << GREEN << "[OK] " << RESET;
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
-
 
 	/*In C++, objects are automatically destroyed when they go out of scope. 
 	In the case of `test3` and `test4`, they are created within the `try` blocks. 
@@ -81,7 +90,7 @@ int main(void)
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << GREEN << "[OK] " << RESET;
+		std::cout << RED << "[KO] " << RESET;
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
@@ -93,7 +102,7 @@ int main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << GREEN << "[OK] " << RESET;
+		std::cout << RED << "[KO] " << RESET;
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
