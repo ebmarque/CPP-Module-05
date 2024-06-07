@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 12:08:35 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 17:35:49 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/07 19:07:44 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int main(void)
 {
 	try
 	{
+		std::cout << CYAN << "\n\n----------> TEST 1 increment until grade above 150 <-----------\n"
+				  << RESET;
 		Bureaucrat test1("Bene", 1);
 		std::cout << YELLOW \
 				  << "\n\noverload of \"<<\" for Bureaucrat class: " \
-				  << test1 << RESET << std::endl;
+				  << test1 << RESET << std::endl << std::endl;
 
 
-		std::cout << CYAN << "\n\n----------> TEST 1 increment until grade above 150 <-----------\n"
-				  << RESET;
 		for (size_t i = 0; i < 200; i++)
 		{
 			test1.increment();
@@ -32,12 +32,12 @@ int main(void)
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << RED << "[KO] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		std::cout << GREEN << "[OK] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 
 	try
@@ -53,12 +53,12 @@ int main(void)
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		std::cout << RED << "[KO] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << GREEN << "[OK] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 
 	/*In C++, objects are automatically destroyed when they go out of scope. 
@@ -86,12 +86,12 @@ int main(void)
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << GREEN << "[OK] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		std::cout << RED << "[KO] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 
 	try
@@ -103,11 +103,11 @@ int main(void)
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << RED << "[KO] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		std::cout << GREEN << "[OK] " << RESET;
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 }
