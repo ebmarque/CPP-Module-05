@@ -6,27 +6,43 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/05 13:49:26 by ebmarque          #+#    #+#              #
-#    Updated: 2024/06/05 13:53:01 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/06/07 16:04:18 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
-CC = gcc
+CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC_DIR = sources
 SRCS = $(addprefix $(SRC_DIR)/, main.cpp Bureaucrat.cpp)
 OBJS = $(addprefix OBJS/, $(notdir $(SRCS:.cpp=.o)))
 
+# Colors
+GREEN = \033[0;32m
+RED = \033[0;31m
+NC = \033[0m
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	@echo "\n"
+	@echo "$(GREEN)Linking object files...$(NC)"
+	@$(CC) $(CFLAGS) -o $@ $^
+	@echo "$(GREEN)$(NAME) successfully compiled!$(NC)"
 
-OBJS/%.o: %.cpp
-	mkdir -p OBJS
-	$(CC) $(CFLAGS) -c $< -o $@
+OBJS/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p OBJS
+	@printf "\033[K$(GREEN)Compiling $< ...$(NC)\r"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf OBJS $(NAME)
+	@echo "$(RED)Cleaning object files...$(NC)"
+	@rm -rf OBJS
 
-.PHONY: all clean
+fclean: clean
+	@echo "$(RED)Cleaning $(NAME)...$(NC)"
+	@rm -fr $(NAME)
+
+re : fclean all
+
+.PHONY: all clean fclean re
