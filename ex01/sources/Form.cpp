@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:17:53 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 19:22:48 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/08 07:37:39 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std::ostream& operator<<(std::ostream &o, const Form& form)
 	std::string signature = "Unsigned";
 	if (form.getSigned() == true)
 		signature = "Signed";
-	o << "Form Name: " << form.getName() << std::endl \
+	o << "\nForm Name: " << form.getName() << std::endl \
 	  << "Grade Required to sign: " << form.getGradeSign() << std::endl \
 	  << "Grade Required to execute: " << form.getGradeExecute() << std::endl \
 	  << "Signature: " << signature << std::endl;
@@ -73,7 +73,7 @@ int Form::getGradeExecute(void) const
 
 int Form::getGradeSign(void) const
 {
-	return (this->_grade_execute);
+	return (this->_grade_sign);
 }
 
 void Form::beSigned(Bureaucrat &ref) 
