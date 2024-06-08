@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 12:08:35 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/08 18:29:29 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:09:01 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 	srand(time(NULL));
 	try {
         Bureaucrat bureaucrat("ash", 2); // error with 200
-        ShrubberyCreationForm form1("Shrubbery");
+        ShrubberyCreationForm form1("test");
         RobotomyRequestForm form2("Robotomy");
         PresidentialPardonForm form3("President");
 

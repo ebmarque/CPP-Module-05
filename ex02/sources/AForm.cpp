@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:17:53 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/08 18:30:11 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:05:13 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ AForm::AForm(const std::string name, const int grade_sign, const int grade_execu
 		throw AForm::GradeTooHighException();
 	if (this->_grade_sign > 150 || this->_grade_execute > 150)
 		throw AForm::GradeTooLowException();
-	std::cout << GREEN << this->getName() + " Created." << std::endl;
 }
 
 AForm::AForm(const AForm& other)  : \

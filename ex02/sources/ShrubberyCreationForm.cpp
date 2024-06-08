@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:24:59 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/08 18:06:11 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:11:35 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	log(RED, this->getName() + " Destroyed.");
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void  ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
   log(CYAN, this->getName() + ": Execute method called.");
   if (!this->getSigned())
@@ -45,13 +45,45 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
   else if (executor.getGrade() > this->getGradeExecute())
     throw AForm::GradeTooLowException();
   
-  std::ofstream form((this->getName() + "_Shrubbery").c_str());
+  std::ofstream form((this->_target + "_Shrubbery").c_str());
 
-  form << "░░░░░░░▄█▄▄▄█▄\n"
-      "▄▀░░░░▄▌─▄─▄─▐▄░░░░▀▄\n"
-      "█▄▄█░░▀▌─▀─▀─▐▀░░█▄▄█\n"
-      "░▐▌░░░░▀▀███▀▀░░░░▐▌\n"
-      "████░▄█████████▄░████\n";
+  form << "              _{\\ _{\\{\\/}/}/}__" << std::endl;
+  form << "             {/{/\\}{/{/\\}(\\}{/\\} _" << std::endl;
+  form << "            {/{/\\}{/{/\\}(_)}{/{/\\}  _" << std::endl;
+  form << "         {\\{/\\(/\\}{/{/\\}\\}{/){/\\}\\} /\\}" << std::endl;
+  form << "        {/{/(_)/}{\\{/\\)}{\\(_){/}/}/}/}" << std::endl;
+  form << "       _{\\{/{/{\\{/{/(_)/}/}/}{\\(/}/}/}" << std::endl;
+  form << "      {/{/{\\{\\{(/}{\\{\\/}/}{\\}(_){\\/}\\}" << std::endl;
+  form << "      _{\\{/{\\{(/}{/{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
+  form << "     {/{/{\\{\\(/}{/{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
+  form << "      {/{/{\\{\\(/}{/{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
+  form << "      _{\\{/{\\{(/}{/{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
+  form << "     {/{/{\\{\\(/}{/{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
+  form << "       {/{/(_)/}{\\{/\\)}{\\(_){/}/}/}/}" << std::endl;
+  form << "        {\\{/\\(/\\}{/{/\\}\\}{/){/\\}\\} /\\}" << std::endl;
+  form << "         {/{/\\}{/{/\\}(_)}{/{/\\}  _" << std::endl;
+  form << "            {/{/\\}{/{/\\}(\\}{/\\} _" << std::endl;
+  form << "             _{\\ _{\\{\\/}/}/}__" << std::endl;
+  form << "              {){/ {\\/}{\\/} \\}\\}" << std::endl;
+  form << "              (_)  \\.-'.-/" << std::endl;
+  form << "          __...--- |'-.-'| --...__" << std::endl;
+  form << "   _...--\"   .-'   |'-.-'|  ' -.  \"\"--..__" << std::endl;
+  form << " -\"    ' .  . '    |.'-._| '  . .  '   jro" << std::endl;
+  form << " .  '-  '    .--'  | '-.'|    .  '  . '" << std::endl;
+  form << "          ' ..     |'-_.-|" << std::endl;
+  form << "  .  '  .       _.-|-._ -|-._  .  '  ." << std::endl;
+  form << "              .'   |'- .-|   '." << std::endl;
+  form << "  ..-'   ' .  '.   `-._.-�   .'  '  - ." << std::endl;
+  form << "   .-' '        '-._______.-'     '  ." << std::endl;
+  form << "        .      ~," << std::endl;
+  form << "    .       .   |\\   .    ' '-." << std::endl;
+  form << "    ___________/  \\____________" << std::endl;
+  form << "   /  Why is it, when you want \\" << std::endl;
+  form << "  |  something, it is so damn   |" << std::endl;
+  form << "  |    much work to get it?     |" << std::endl;
+  form << "   \\___________________________/" << std::endl;
+
+  form.close();
   
 }
 

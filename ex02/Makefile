@@ -6,7 +6,7 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 17:51:37 by ebmarque          #+#    #+#              #
-#    Updated: 2024/06/08 17:53:21 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/06/08 19:12:28 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 clean:
 	@echo "$(RED)Cleaning object files...$(NC)"
 	@rm -rf $(OBJ_DIR)
-
+	@rm -fr *_Shrubbery
 fclean: clean
 	@echo "$(RED)Cleaning $(NAME)...$(NC)"
 	@rm -fr $(NAME)
+	@rm -fr *_Shrubbery
 
 re: fclean all
 
