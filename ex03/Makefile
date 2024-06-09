@@ -6,12 +6,12 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 17:51:37 by ebmarque          #+#    #+#              #
-#    Updated: 2024/06/08 23:24:17 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/06/09 20:06:25 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Intern
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 

@@ -6,13 +6,13 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:12:56 by ebmarque          #+#    #+#              #
-#    Updated: 2024/06/07 18:55:02 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/06/09 20:06:25 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = Bureaucrat
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC_DIR = sources
 SRCS = $(addprefix $(SRC_DIR)/, main.cpp Bureaucrat.cpp Form.cpp)

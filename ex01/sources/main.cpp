@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 12:08:35 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 19:22:18 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:41:32 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(void)
 	try
 	{
 		Form form1("Fomr 1", 0, 1);
+		// Bureaucrat bene("Bene", 65);
+		// bene.signForm(form1);
 	}
 	catch (Form::GradeTooHighException &e)
 	{

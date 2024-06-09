@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:08:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 18:56:00 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:35:09 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
 
 // ASCII color codes
 #define RESET "\033[0m"
@@ -28,6 +29,7 @@
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
+class Form;
 class Bureaucrat
 {
 	private:
@@ -45,6 +47,8 @@ class Bureaucrat
 		int			getGrade(void) const;
 		void		increment(void);
 		void		decrement(void);
+		void		signForm(Form &form);
+
 		/* ---------------- Exception Classes ---------------- */
 		class GradeTooHighException : public std::exception
 		{
