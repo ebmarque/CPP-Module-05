@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 12:08:35 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/07 19:07:44 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/10 12:26:39 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void)
 {
 	try
 	{
-		std::cout << CYAN << "\n\n----------> TEST 1 increment until grade above 150 <-----------\n"
+		std::cout << CYAN << "\n\n----------> TEST 1 decrement until grade above 150 <-----------\n"
 				  << RESET;
 		Bureaucrat test1("Bene", 1);
 		std::cout << YELLOW \
@@ -26,7 +26,7 @@ int main(void)
 
 		for (size_t i = 0; i < 200; i++)
 		{
-			test1.increment();
+			test1.decrement();
 		}
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
@@ -42,12 +42,12 @@ int main(void)
 
 	try
 	{
-		std::cout << CYAN << "\n\n----------> TEST 2 decrement until grade bellow 1 <-----------\n"
+		std::cout << CYAN << "\n\n----------> TEST 2 increment until grade bellow 1 <-----------\n"
 				  << RESET;
 		Bureaucrat test2("Johnny", 150);
 		for (size_t i = 0; i < 158; i++)
 		{
-			test2.decrement();
+			test2.increment();
 		}
 	}
 	catch (Bureaucrat::GradeTooLowException &e)

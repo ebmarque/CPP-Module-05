@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:54:08 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/09 20:07:16 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/10 12:29:12 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 std::ostream& operator<<(std::ostream &o, const Bureaucrat &ref) 
 {
-	o << ref.getName() << ", bureaucrat grade " << ref.getGrade();
+	o << "Bureaucrat name: " << ref.getName() << ", bureaucrat grade " << ref.getGrade();
     return (o);
 }
 
