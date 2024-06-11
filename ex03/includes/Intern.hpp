@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 19:19:02 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/08 23:17:07 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/09 16:11:09 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,13 @@
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include <algorithm>
-#include <cctype>
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <vector>
-
-typedef struct s_forms
-{
-	AForm *form;
-	struct s_forms *next;
-}				t_forms;
-
 
 class Intern
 {
-	private:
-		t_forms *forms_list;
+
 	public:
 	
 		Intern();
@@ -40,10 +29,10 @@ class Intern
 		Intern& operator=(const Intern& other);
 		~Intern();
 		
-		AForm			*makeForm(std::string formType, std::string target) const;
-		void			add_front(AForm *form);
-		static Intern&	getInstance(void);
-
+		AForm	*makeForm(std::string formType, std::string target) const;
+		AForm	*makePresidential(std::string target) const;
+		AForm	*makeRobotomy(std::string target) const;
+		AForm	*makeShrubbery(std::string target) const;
 	class noFormTypeEncountered : public std::exception
 	{
 		public:
